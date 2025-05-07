@@ -2,6 +2,8 @@
 
 An interactive web application that allows users to ask questions about images using voice commands. The application uses speech-to-text, image question-answering, and text-to-speech capabilities to provide a seamless user experience.
 
+![image](imgs/image.png)
+
 ## Features
 
 - Speech-to-Text Interface (10-second recording limit)

@@ -25,13 +25,13 @@ app.add_middleware(
 whisper_model = whisper.load_model("small")
 processor = Blip2Processor.from_pretrained("Salesforce/blip2-opt-2.7b")
 model = Blip2ForConditionalGeneration.from_pretrained(
-    "Salesforce/blip2-opt-2.7b", torch_dtype=torch.int4
+    "Salesforce/blip2-opt-2.7b", torch_dtype=torch.float16
 )
 if torch.cuda.is_available():
     model = model.to("cuda")
 
 # Initialize TTS engine
-tts_engine = pyttsx3.init()
+#tts_engine = pyttsx3.init()
 
 @app.post("/transcribe")
 async def transcribe_audio(audio_file: UploadFile = File(...)):

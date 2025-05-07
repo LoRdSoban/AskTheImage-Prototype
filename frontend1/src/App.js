@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 import { MicrophoneIcon, PhotoIcon, PlayIcon, StopIcon } from '@heroicons/react/24/solid';
 
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = 'https://67d1-4-240-39-193.ngrok-free.app';
 
 function App() {
   const [isRecording, setIsRecording] = useState(false);
@@ -15,6 +15,9 @@ function App() {
   const mediaRecorderRef = useRef(null);
   const audioChunksRef = useRef([]);
   const audioRef = useRef(null);
+
+  axios.defaults.headers.common['ngrok-skip-browser-warning'] = '123' // for all requests
+
 
   const startRecording = async () => {
     try {
